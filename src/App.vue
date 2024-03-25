@@ -1,15 +1,30 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import { ref } from 'vue';
+
+const count = ref(0)
+
+const text = ref('')
+
+function increment() {
+  count.value++
+}
+
+function onInput(e){
+  text.value = e.target.value
+}
+
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <button @click="increment"> 숫자 올려! : {{ count }}</button>
+    <input :value="text" @input="onInput"> <!-- 양방향 바인딩-->
+    <p>{{ text }}</p>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
+    <input v-model="text"> <!-- 양방향 바인딩 간소화 -->
+    <p>{{ text }}</p>
+    
   </header>
 
   <main>
@@ -18,15 +33,6 @@ import TheWelcome from './components/TheWelcome.vue'
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
 @media (min-width: 1024px) {
   header {
     display: flex;
