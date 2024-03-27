@@ -1,5 +1,4 @@
 <script setup>
-import TheWelcome from './components/TheWelcome.vue'
 import { ref } from 'vue';
 
 const count = ref(0)
@@ -14,22 +13,29 @@ function onInput(e){
   text.value = e.target.value
 }
 
+const awesome = 1
+
+function toggle() {
+  awesome.value = 0
+}
+
 </script>
 
 <template>
   <header>
+    <h1 v-if="awesome">Hello Vue</h1>
+    <h1 v-else>Oh No</h1>
+  </header>
+
+  <section>
     <button @click="increment"> 숫자 올려! : {{ count }}</button>
     <input :value="text" @input="onInput"> <!-- 양방향 바인딩-->
     <p>{{ text }}</p>
 
     <input v-model="text"> <!-- 양방향 바인딩 간소화 -->
     <p>{{ text }}</p>
-    
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  </section>
+ 
 </template>
 
 <style scoped>
