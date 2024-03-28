@@ -1,6 +1,8 @@
 <script setup>
 import { ref } from 'vue';
 
+import TodoList from './components/TodoList.vue'
+
 const count = ref(0)
 
 const text = ref('')
@@ -34,6 +36,9 @@ function toggle() {
 
     <input v-model="text"> <!-- 양방향 바인딩 간소화 -->
     <p>{{ text }}</p>
+  </section>
+  <section>
+    <TodoList/>
   </section>
  
 </template>
