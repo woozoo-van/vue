@@ -46,6 +46,12 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+a {
+	color: #01022e; text-decoration: none; outline: none
+} 
+a:hover, a:active {
+	text-decoration: none; color:#fff; background-color:#f59000;
+}
 /* -- reset -- */
 
 *, cite, p, span {
@@ -91,4 +97,18 @@ section {
 
 article {
 	padding: 1em 0 ;
+}
+
+.menu li {
+	width: 7rem;
+	display: inline-block;
+}
+
+.menu li .active {
+	background-color:paleturquoise;
+}
+
+.menu li a{
+	display: block;
+	width: 100%;
 }

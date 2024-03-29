@@ -1,0 +1,19 @@
+{
+    "menus":[
+        {
+            "id":1,
+            "name": "day plan",
+            "visible": true
+        },
+        {
+            "id":2,
+            "name": "month plan",
+            "visible": true
+        },
+        {
+            "id":3,
+            "name": "year plan",
+            "visible": true
+        }
+    ]
+}
